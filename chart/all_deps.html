@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>  
+  <script type="text/javascript">
+  window.onload = function () {
+    var chart = new CanvasJS.Chart("chartContainer",
+    {
+      zoomEnabled: true,
+      animationEnabled: true,
+      title:{
+        text: "Rating Diversity"
+      },
+      axisX: {
+        title:"Degree of Rating Diversity",
+        valueFormatString: "#0.#",
+        maximum: 1.4,
+        minimum: 0.7,
+        gridThickness: 1,
+	tickThickness: 1,
+        gridColor: "lightgrey",
+        tickColor: "lightgrey",
+        lineThickness: 0
+      },
+      axisY:{
+        title: "Consistency of Rating Diversity Across Products",
+        gridThickness: 1,
+	tickThickness: 1,
+        gridColor: "lightgrey",
+        tickColor: "lightgrey",
+        lineThickness: 0,
+        //valueFormatString:"#,##0k,.",
+        valueFormatString: "#0.#",
+        maximum: 0.5,
+        minimum: 0.25,
+        interval: 0.1
+        
+      },
+
+      data: [
+      {        
+        type: "bubble",     
+        //toolTipContent: "<span style='\"'color: {color};'\"'><strong>{label}</strong></span><br/> <strong>Land Area</strong> {x} mn sq. km <br/> <strong>Rail Road</strong> {y} km<br/> <strong>Population</strong> {z} mn",
+        toolTipContent: "<span style='\"'color: {color};'\"'><strong>{label}</strong></span><br/> <strong>Number of Products</strong> {z}}",
+        dataPoints: [
+
+{ x: 1.028622, y: 0.381858, z: 4786, label: "Amazon_Instant_Video" },
+{ x: 1.325111, y: 0.298978, z: 14293, label: "Apps_for_Android" },
+{ x: 1.046478, y: 0.408813, z: 21715, label: "Automotive" },
+{ x: 1.126336, y: 0.352126, z: 12610, label: "Baby" },
+{ x: 1.149540, y: 0.360212, z: 33879, label: "Beauty" },
+{ x: 0.908913, y: 0.383191, z: 359458, label: "Books" },
+{ x: 0.859334, y: 0.362860, z: 64026, label: "CDs_and_Vinyl" },
+{ x: 1.314775, y: 0.311707, z: 40486, label: "Cell_Phones_and_Accessories" },
+{ x: 1.076709, y: 0.328165, z: 88132, label: "Clothing_Shoes_and_Jewelry" },
+{ x: 0.740785, y: 0.402321, z: 9501, label: "Digital_Music" },
+{ x: 1.224122, y: 0.352229, z: 90897, label: "Electronics" },
+{ x: 1.072742, y: 0.396650, z: 22249, label: "Grocery_and_Gourmet_Food" },
+{ x: 1.166715, y: 0.370795, z: 43003, label: "Health_and_Personal_Care" },
+{ x: 1.137177, y: 0.379559, z: 58493, label: "Home_and_Kitchen" },
+{ x: 0.894301, y: 0.376925, z: 60383, label: "Kindle_Store" },
+{ x: 1.044740, y: 0.352034, z: 50603, label: "Movies_and_TV" },
+{ x: 1.020763, y: 0.385592, z: 8067, label: "Musical_Instruments" },
+{ x: 1.193958, y: 0.392386, z: 18399, label: "Office_Products" },
+{ x: 1.184153, y: 0.380849, z: 16130, label: "Patio_Lawn_and_Garden" },
+{ x: 1.150247, y: 0.362131, z: 17250, label: "Pet_Supplies" },
+{ x: 1.061426, y: 0.366746, z: 51129, label: "Sports_and_Outdoors" },
+{ x: 1.098971, y: 0.384445, z: 31261, label: "Tools_and_Home_Improvement" },
+{ x: 1.037348, y: 0.394256, z: 38761, label: "Toys_and_Games" },
+{ x: 1.200726, y: 0.319974, z: 16937, label: "Video_Games" }
+        ]
+      }
+      ]
+    });
+
+chart.render();
+}
+</script>
+<script type="text/javascript" src="canvasjs.min.js"></script>
+</head>
+<body>
+  <div id="chartContainer" style="height: 300px; width: 500px;">
+  </div>
+</body>
+
+</html>

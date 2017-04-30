@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>  
+       <script type="text/javascript" src="books_scatter.js" ></script>
+       <script type="text/javascript" src="electronics_scatter.js" ></script>
+       <script type="text/javascript">
+	window.onload = function () {
+		var bookChart = new CanvasJS.Chart("chartContainer",
+		{
+			title:{
+				text: "Distribution of Rating Diversity (Green - Books, Blue - Electronics)",      
+				fontFamily: "arial black",
+				fontColor: "DarkSlateGrey"
+			},
+			axisX: {
+				title:"Rating Diversity",
+				titleFontFamily: "arial"
+
+			},
+			axisY:{
+				title: "Number of Products",
+				titleFontFamily: "arial",
+				titleFontSize: 12
+			},
+
+			data: [
+			{        
+				type: "scatter",  
+                                color: "#009900",
+				dataPoints: bookDataPoints,
+			},
+			{        
+				type: "scatter",  
+                                color: "#000099",
+				dataPoints: electronicDataPoints,
+			}
+
+			]
+		});
+
+bookChart.render();
+}
+</script>
+<script type="text/javascript" src="canvasjs.min.js"></script>
+</head>
+<body>
+	<div id="chartContainer" style="height: 300px; width: 500px;">
+	</div>
+</body>
+</html>
